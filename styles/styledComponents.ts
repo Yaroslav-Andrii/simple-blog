@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const Button = styled.a`
+export const Button = styled.button`
+  background-color: white;
   float: right;
   text-align: center; 
   text-transform: uppercase;
@@ -20,7 +21,19 @@ export const Button = styled.a`
 export const CardGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px
+  grid-template-rows: 1fr;
+  gap: 10px;
+
+  &>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px dashed black;
+
+    &>button {
+      align-self: flex-end;
+    }
+  }
 `;
 
 export const PostContainer = styled.div`
