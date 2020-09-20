@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Head from 'next/head';
+
 import { Navbar } from '../components/Navbar';
 import { Alert } from '../components/Alert';
+
+import IPost from '../interfaces/IPost';
+import IState from '../interfaces/IState';
+
+import { initPostsListAsync } from '../store/actions';
+
 import { 
   Main,
   Container
@@ -9,6 +17,15 @@ import {
 
 export const MainLayout = (props) => {
   const title = props.title ? `${props.title} | Simple blog` : 'Simple blog';
+  
+  const dispatch = useDispatch();
+  const posts: IPost[] = useSelector((state: IState) => state.postsState);
+
+  useEffect(() => {
+    if (!posts.length) {
+      dispatch( initPostsListAsync() );
+    }
+  }, [dispatch, posts])
 
   return (
     <>
