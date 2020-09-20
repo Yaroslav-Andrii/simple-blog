@@ -1,0 +1,17 @@
+export enum PostTypes {
+  GET_POSTS = 'GET_POSTS',
+  GET_POST = 'GET_POST',
+  DELETE_POST = 'DELETE_POST',
+  UPDATE_POST = 'UPDATE_POST',
+  CREATE_POST = 'CREATE_POST',
+  INIT_POSTS = 'INIT_POSTS',
+}
+
+export enum CommentTypes {
+  CREATE_COMMENT = 'CREATE_COMMENT'
+}
+
+export enum AlertTypes {
+  SHOW_ALERT = 'SHOW_ALERT',
+  HIDE_ALERT = 'HIDE_ALERT',
+}
